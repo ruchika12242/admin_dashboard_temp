@@ -1,0 +1,66 @@
+<!--top-navbar-->
+<div class="topnav shadow p-1">
+   <div class="admin"><a><i class="bi bi-person-fill"></i> Admin</a></div> 
+    <div class="image-container">
+        <img src="assets/my-image.png" alt="My Image" class="my-image">
+    </div>
+</div>
+<!--top-navbar-->
+<!--left side nav bar -->
+ <div class="sidebar shadow p-2" id="sidebar">
+    <ul class="nav-item" id="navi">
+      <li><a href="#"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+      <li><a href="#"><i class="bi bi-graph-up-arrow"></i> Analytics</a></li>
+      <li><a href="#"><i class="bi bi-paperclip"></i> Reports</a></li>
+      <li><a href="#"><i class="bi bi-cart3"></i> Store Manager</a></li>
+      <li>
+         <a href="#"><i class="bi bi-gift"></i> Products</a>
+      </li>
+      <li><a href="#"><i class="bi bi-person-fill"></i> User</a></li>
+      <li><a href="#"><i class="bi bi-power"></i> Logout</a></li>
+   </ul>
+</div>
+
+ <div class="scrollmenu">
+<div class="container-fluid">
+<div class="row g-3 my-2">
+ </div>
+   <div class="row">
+       <div class="col">
+           <table class="table bg-white rounded shadow-sm ">
+                <thead>
+                  <tr>
+                    <th>Event ID</th>
+                    <th>Tenant ID</th>
+                    <th>User ID</th>
+                    <th>SubjectType ID</th>
+                    <th>Subject ID</th>
+                    <th>Subject Name</th>
+                    <th>Action ID</th>
+                    <th>Details</th>
+                    <th>Created Timestamp</th> 
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let event of events">
+                    <td>{{ event.EVENTUUID }}</td>
+                    <td>{{ event.TENANT_ID }}</td>
+                    <td>{{ event.USER_ID }}</td>
+                    <td>{{ event.SUBJECT_TYPE_ID }}</td>
+                    <td>{{ event.SUBJECT_ID }}</td>
+                    <td>{{ event.SUBJECT_NAME }}</td>
+                    <td>{{ event.ACTION_ID }}</td>
+                    <td>{{ event.DETAILS }}</td>
+                    <td>{{ event.created_timestamp | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                  </tr>
+                </tbody>
+            </table>
+       </div>
+   </div>
+  </div>
+</div>
+
+
+
+<!--left side nav bar -->
+<router-outlet></router-outlet>
